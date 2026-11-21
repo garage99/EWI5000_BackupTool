@@ -6,6 +6,7 @@
     <key>CFBundleDisplayName</key><string>EWI5000 Bank Manager</string>
     <key>CFBundleIdentifier</key><string>net.garage99.ewi5000bankmanager</string>
     <key>CFBundleExecutable</key><string>EWI5000BankManager</string>
+    <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>0.1.0</string>
     <key>CFBundleVersion</key><string>1</string>

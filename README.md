@@ -14,7 +14,9 @@ A macOS app to back up and restore the AKAI EWI5000 user bank (00–99) over USB
 
 ## ダウンロード / Download
 
-[Releases](../../releases) から `EWI5000_Bank_Manager_Mac_vX.Y.Z.zip` をダウンロードしてください。
+**[⬇ EWI5000_Bank_Manager_Mac_v0.1.0.zip をダウンロード](https://github.com/garage99/EWI5000_BackupTool/raw/main/download/EWI5000_Bank_Manager_Mac_v0.1.0.zip)**（Apple Silicon / Intel 両対応、約 700KB）
+
+`download` フォルダに置いてあります。
 
 1. zip をダブルクリックして展開する
 2. 出てきた **EWI5000 Bank Manager.app** を「アプリケーション」フォルダに入れる

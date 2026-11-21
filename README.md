@@ -1,6 +1,8 @@
 # EWI5000_BackupTool（EWI5000 Bank Manager for Mac）
 
 なんとなく作ったMac版のEWI5000ユーザープリセットのバックアップツールです。
+ClaudeCodeでつくってます。
+ソースとかよくわかりません（笑）
 
 AKAI Professional EWI5000 のユーザーバンク（00〜99）を、USB MIDI でバックアップ・復元する macOS アプリです。
 A macOS app to back up and restore the AKAI EWI5000 user bank (00–99) over USB MIDI.

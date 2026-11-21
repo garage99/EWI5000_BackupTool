@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key><string>EWI5000 Bank Manager</string>
+    <key>CFBundleDisplayName</key><string>EWI5000 Bank Manager</string>
+    <key>CFBundleIdentifier</key><string>net.garage99.ewi5000bankmanager</string>
+    <key>CFBundleExecutable</key><string>EWI5000BankManager</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.1.0</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>CFBundleDevelopmentRegion</key><string>ja</string>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeName</key><string>EWI5000 SysEx</string>
+            <key>CFBundleTypeRole</key><string>Editor</string>
+            <key>CFBundleTypeExtensions</key><array><string>syx</string></array>
+            <key>LSHandlerRank</key><string>Alternate</string>
+        </dict>
+        <dict>
+            <key>CFBundleTypeName</key><string>EWI5000 Library</string>
+            <key>CFBundleTypeRole</key><string>Viewer</string>
+            <key>CFBundleTypeExtensions</key><array><string>ewi</string></array>
+            <key>LSHandlerRank</key><string>Alternate</string>
+        </dict>
+    </array>
+</dict>
+</plist>

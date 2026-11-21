@@ -1,0 +1,7 @@
+build/
+dist/
+.DS_Store
+# AKAI の工場出荷データ（SDカードの中身）と実機の記録は入れない
+tests/in/*
+!tests/in/.gitkeep
+autobuild.conf

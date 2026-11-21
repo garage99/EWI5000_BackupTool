@@ -1,9 +1,11 @@
 import SwiftUI
 import CoreMIDI
+import UniformTypeIdentifiers
 
 struct ContentView: View {
     @EnvironmentObject var model: AppModel
     @State private var copyTarget = 0
+    @State private var dropTargeted = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -17,6 +19,25 @@ struct ContentView: View {
             logPanel.frame(height: 170)
         }
         .frame(minWidth: 900, minHeight: 620)
+        // .syx / .ewi をウインドウのどこにドロップしても開ける
+        .dropDestination(for: URL.self) { urls, _ in
+            let files = urls.filter { ["syx", "ewi"].contains($0.pathExtension.lowercased()) }
+            guard let url = files.first ?? urls.first else { return false }
+            model.openFile(url)
+            if urls.count > 1 { model.append("複数のファイルがドロップされました。最初の \(url.lastPathComponent) を開きました") }
+            return true
+        } isTargeted: { dropTargeted = $0 }
+        .overlay {
+            if dropTargeted {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12).fill(Color.accentColor.opacity(0.08))
+                    RoundedRectangle(cornerRadius: 12).strokeBorder(Color.accentColor, style: StrokeStyle(lineWidth: 3, dash: [10, 6]))
+                    Text("ここにドロップして開く（.syx / .ewi）").font(.title2.bold()).foregroundStyle(Color.accentColor)
+                }
+                .padding(6)
+                .allowsHitTesting(false)
+            }
+        }
     }
 
     // MARK: 接続
@@ -120,7 +141,7 @@ struct ContentView: View {
                 }
             } else {
                 Spacer()
-                Text("バックアップした .syx か、SDカードの USERLIB.EWI / patchlib.ewi を開くと、本体に書き戻せます。")
+                Text("バックアップした .syx か、SDカードの USERLIB.EWI / patchlib.ewi を、ここにドラッグ＆ドロップするか「ファイルを開く…」で開くと、本体に書き戻せます。")
                     .foregroundStyle(.secondary).frame(maxWidth: .infinity)
                 Spacer()
             }

@@ -224,6 +224,10 @@ final class AppModel: ObservableObject {
 
     func openFile(_ url: URL) {
         guard let data = try? Data(contentsOf: url), let f = BackupFile.load([UInt8](data)) else {
+            if let data = try? Data(contentsOf: url), !SettingsFile.load([UInt8](data)).isEmpty {
+                append("\(url.lastPathComponent) は本体設定のバックアップです（本体設定の書き戻しにはまだ対応していません）", error: true)
+                return
+            }
             append("\(url.lastPathComponent) は EWI5000 の音色ファイルとして読めませんでした", error: true)
             return
         }

@@ -14,7 +14,7 @@ A macOS app to back up and restore the AKAI EWI5000 user bank (00–99) over USB
 
 ## ダウンロード / Download
 
-**[⬇ EWI5000_Bank_Manager_Mac_v0.1.0.zip をダウンロード](https://github.com/garage99/EWI5000_BackupTool/raw/main/download/EWI5000_Bank_Manager_Mac_v0.1.0.zip)**（Apple Silicon / Intel 両対応、約 700KB）
+**[⬇ EWI5000_Bank_Manager_Mac_v0.1.1.zip をダウンロード](https://github.com/garage99/EWI5000_BackupTool/raw/main/download/EWI5000_Bank_Manager_Mac_v0.1.1.zip)**（Apple Silicon / Intel 両対応、約 700KB）
 
 `download` フォルダに置いてあります。
 
@@ -77,6 +77,7 @@ xattr -dr com.apple.quarantine "/Applications/EWI5000 Bank Manager.app"
 1. EWI5000 を USB でつないで電源を入れる。**公式 Sound Editor は閉じる**
 2. 「接続」を押すと、ユーザーバンクの一覧が表示される
 3. まず「一括バックアップ…」で今の状態を保存する
+   - バックアップした `.syx` や SD カードの `.ewi` は、ウインドウにドラッグ＆ドロップしても開けます
 4. 書き戻しは、最初は消えても困らない番号で試してください
 
 ### できないこと・注意
@@ -134,6 +135,10 @@ AKAI Professional、EWI、EWI5000 は inMusic Brands, Inc. の商標または登
 ```
 Xcode（またはコマンドラインツール）が必要です。`dist/` にアプリと配布用 zip ができます。
 ビルド時に自己テスト（模擬 EWI5000 を相手にした読み出し・復元・コピー）を実行します。
+
+## 更新履歴 / Changelog
+- **v0.1.1**：.syx / .ewi のドラッグ＆ドロップに対応
+- **v0.1.0**：最初の公開版
 
 ## 謝辞 / Acknowledgements
 - [shingoaoki1985/ewi5000-bank-manager](https://github.com/shingoaoki1985/ewi5000-bank-manager)（Windows 版）— このツールを作るきっかけになりました。
